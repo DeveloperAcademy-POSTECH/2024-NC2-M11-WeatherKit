@@ -51,6 +51,8 @@
 		38EDBF2D2C1BD2F800F15D11 /* KwangKwang */ = {
 			isa = PBXGroup;
 			children = (
+				38EDBF982C1FCAD000F15D11 /* Model */,
+				38EDBF972C1FCAC600F15D11 /* View */,
 				38EDBF2E2C1BD2F800F15D11 /* KwangKwangApp.swift */,
 				38EDBF302C1BD2F800F15D11 /* ContentView.swift */,
 				38EDBF322C1BD2F900F15D11 /* Assets.xcassets */,
@@ -65,6 +67,28 @@
 				38EDBF352C1BD2F900F15D11 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		38EDBF972C1FCAC600F15D11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38EDBF992C1FCAD800F15D11 /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		38EDBF982C1FCAD000F15D11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		38EDBF992C1FCAD800F15D11 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
