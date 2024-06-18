@@ -4,6 +4,7 @@ import CoreLocation
 struct MainView: View {
     
     @ObservedObject private var weatherManager = WeatherManager()
+    @State private var conditionImage: String = ""
     
     let dailyFormat = DateFormat().dailyFormat
     let pohang = CLLocation(latitude: 36.0190178, longitude: 129.343408)
@@ -17,7 +18,7 @@ struct MainView: View {
                 
                 Spacer()
             }
-            Text(StringLiterals.Condition.drizzle.rawValue)
+            Text(StringLiterals.Condition.rainy.rawValue)
                 .padding(.leading, 3)
                 .frame(width: 360, alignment: .leading)
             
@@ -55,6 +56,10 @@ struct MainView: View {
                     }
                 }
             }
+            Image("wind")
+                .resizable()
+                .frame(width: 353, height: 396)
+            
         }
         .onAppear {
             Task {
