@@ -11,7 +11,7 @@ struct DateFormat {
     
     let hourlyFormat: DateFormatter = {
         let format = DateFormatter()
-        format.dateFormat = "hh 시"
+        format.dateFormat = "a h"
         format.locale = Locale(identifier: "ko_KR")
         return format
     }()

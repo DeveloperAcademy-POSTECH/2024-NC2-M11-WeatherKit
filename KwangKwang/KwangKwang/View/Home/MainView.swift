@@ -59,7 +59,7 @@ struct MainView: View {
             Image("wind")
                 .resizable()
                 .frame(width: 353, height: 396)
-            
+            HourlyView(weatherManager: weatherManager)
         }
         .onAppear {
             Task {

@@ -43,6 +43,16 @@ class WeatherManager: ObservableObject {
         }
     }
     
+    var hourlyWeather: Forecast<HourWeather>? {
+        
+        if let hourly = weather?.hourlyForecast {
+            return hourly
+        } else {
+            print("hourly weather Error")
+            return nil
+        }
+    }
+    
     var temperature: String {
         guard let temp = weather?.currentWeather.temperature else { return "--" }
         let convert = temp.converted(to: .celsius).value
