@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38C1C7192C20BD48000DE6FE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1C7182C20BD48000DE6FE /* MainView.swift */; };
+		38C1C71E2C21147F000DE6FE /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1C71D2C21147F000DE6FE /* DateFormat.swift */; };
+		38C1C7222C2206B6000DE6FE /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1C7212C2206B6000DE6FE /* WeatherManager.swift */; };
+		38C1C7252C220990000DE6FE /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1C7242C220990000DE6FE /* StringLiterals.swift */; };
 		38EDBF2F2C1BD2F800F15D11 /* KwangKwangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EDBF2E2C1BD2F800F15D11 /* KwangKwangApp.swift */; };
-		38EDBF312C1BD2F800F15D11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EDBF302C1BD2F800F15D11 /* ContentView.swift */; };
 		38EDBF332C1BD2F900F15D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38EDBF322C1BD2F900F15D11 /* Assets.xcassets */; };
 		38EDBF362C1BD2F900F15D11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38EDBF352C1BD2F900F15D11 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38C1C7182C20BD48000DE6FE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		38C1C71C2C20BF10000DE6FE /* KwangKwang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KwangKwang.entitlements; sourceTree = "<group>"; };
+		38C1C71D2C21147F000DE6FE /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		38C1C7212C2206B6000DE6FE /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		38C1C7242C220990000DE6FE /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		38EDBF2B2C1BD2F800F15D11 /* KwangKwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KwangKwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38EDBF2E2C1BD2F800F15D11 /* KwangKwangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwangKwangApp.swift; sourceTree = "<group>"; };
-		38EDBF302C1BD2F800F15D11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38EDBF322C1BD2F900F15D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38EDBF352C1BD2F900F15D11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38C1C7232C220982000DE6FE /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				38C1C7242C220990000DE6FE /* StringLiterals.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		38EDBF222C1BD2F800F15D11 = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +66,11 @@
 		38EDBF2D2C1BD2F800F15D11 /* KwangKwang */ = {
 			isa = PBXGroup;
 			children = (
+				38C1C7232C220982000DE6FE /* Constant */,
+				38C1C71C2C20BF10000DE6FE /* KwangKwang.entitlements */,
 				38EDBF982C1FCAD000F15D11 /* Model */,
 				38EDBF972C1FCAC600F15D11 /* View */,
 				38EDBF2E2C1BD2F800F15D11 /* KwangKwangApp.swift */,
-				38EDBF302C1BD2F800F15D11 /* ContentView.swift */,
 				38EDBF322C1BD2F900F15D11 /* Assets.xcassets */,
 				38EDBF342C1BD2F900F15D11 /* Preview Content */,
 			);
@@ -80,6 +96,8 @@
 		38EDBF982C1FCAD000F15D11 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				38C1C71D2C21147F000DE6FE /* DateFormat.swift */,
+				38C1C7212C2206B6000DE6FE /* WeatherManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -87,6 +105,7 @@
 		38EDBF992C1FCAD800F15D11 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				38C1C7182C20BD48000DE6FE /* MainView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -161,7 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38EDBF312C1BD2F800F15D11 /* ContentView.swift in Sources */,
+				38C1C7222C2206B6000DE6FE /* WeatherManager.swift in Sources */,
+				38C1C7252C220990000DE6FE /* StringLiterals.swift in Sources */,
+				38C1C7192C20BD48000DE6FE /* MainView.swift in Sources */,
+				38C1C71E2C21147F000DE6FE /* DateFormat.swift in Sources */,
 				38EDBF2F2C1BD2F800F15D11 /* KwangKwangApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,17 +315,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KwangKwang/KwangKwang.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KwangKwang/Preview Content\"";
 				DEVELOPMENT_TEAM = 89S2Z5S7CX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,17 +347,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KwangKwang/KwangKwang.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KwangKwang/Preview Content\"";
 				DEVELOPMENT_TEAM = 89S2Z5S7CX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -11,7 +11,7 @@ import SwiftUI
 struct KwangKwangApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
