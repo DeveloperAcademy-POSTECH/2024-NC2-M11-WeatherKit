@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "typhoonx1.png",
+      "filename" : "태풍x1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "typhoonx2.png",
+      "filename" : "태풍x2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "typhoonx3.png",
+      "filename" : "태풍x3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

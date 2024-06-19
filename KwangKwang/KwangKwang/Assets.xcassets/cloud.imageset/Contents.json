@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "cloudx1.png",
+      "filename" : "흐린 날x1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "cloudx2.png",
+      "filename" : "흐린 날x2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "cloudx3.png",
+      "filename" : "흐린 날x3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
