@@ -28,7 +28,6 @@ struct LoHiTempView: View {
                             if let daily = weatherManager.dailyWeather {
                                 ForEach(0..<10) { index in
                                     if dailyFormat.string(from: daily[index].date) == dailyFormat.string(from: Date()) {
-                                        
                                         Text("최저: \(Int(daily[index].lowTemperature.converted(to: .celsius).value))°")
                                             .font(.caption)
                                         Text("최고: \(Int(daily[index].highTemperature.converted(to: .celsius).value))°")

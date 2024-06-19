@@ -25,10 +25,12 @@ struct MainView: View {
             
             LoHiTempView(weatherManager: weatherManager)
             
-            Image("wind")
+            Image(choiceImage())
                 .resizable()
                 .frame(width: 353, height: 396)
+            
             HourlyView(weatherManager: weatherManager)
+                .padding(.top, 20)
         }
         .onAppear {
             Task {
@@ -47,15 +49,33 @@ struct MainView: View {
             case .blowingDust, .breezy, .tropicalStorm, .windy :
                 return "wind"
             case .clear, .hot, .sunFlurries, .sunShowers, .mostlyClear :
-                return "sun.max"
+                return "sunRise"
             case .cloudy, .foggy, .mostlyCloudy, .partlyCloudy :
                 return "cloud"
-            case .rain :
-                return "cloud.rain"
             case .hurricane :
-                return "cloud.bolt.rain"
+                return "typhoon"
             default :
-                return "cloud.heavyrain"
+                return "rainy"
+            }
+        } else {
+            return ""
+        }
+    }
+    func choiceText() -> String {
+        if let daily = weatherManager.dailyWeather {
+            switch daily[0].condition {
+            case .blizzard, .blowingSnow, .flurries, .hail, .snow, .frigid, .sleet, .wintryMix, .heavySnow :
+                return "snow"
+            case .blowingDust, .breezy, .tropicalStorm, .windy :
+                return "wind"
+            case .clear, .hot, .sunFlurries, .sunShowers, .mostlyClear :
+                return "sunRise"
+            case .cloudy, .foggy, .mostlyCloudy, .partlyCloudy :
+                return "cloud"
+            case .hurricane :
+                return "typhoon"
+            default :
+                return "rainy"
             }
         } else {
             return ""

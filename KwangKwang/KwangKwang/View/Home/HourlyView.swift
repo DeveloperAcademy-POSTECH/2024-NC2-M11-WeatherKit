@@ -27,6 +27,10 @@ struct HourlyView: View {
                                 Text("지금")
                                     .font(.caption)
                                     .fontWeight(.bold)
+                                Image(choiceImage(0))
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 36, height: 36)
                                 Text("\(Int(weatherManager.currentWeather!.temperature.converted(to: .celsius).value))°")
                                     .font(.body)
                             }
@@ -42,6 +46,10 @@ struct HourlyView: View {
                                             Text("\(hourFormat.string(from: hourly[index].date))시")
                                                 .font(.caption)
                                                 .fontWeight(.bold)
+                                            Image(choiceImage(index))
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 36, height: 36)
                                             Text("\(Int(hourly[index].temperature.converted(to: .celsius).value))°")
                                                 .font(.body)
                                         }
@@ -53,6 +61,19 @@ struct HourlyView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+        }
+    }
+    func choiceImage(_ index: Int) -> String {
+        
+        if let hourly = weatherManager.hourlyWeather {
+            switch hourly[index].condition {
+            case .clear, .hot, .sunFlurries, .sunShowers, .mostlyClear, .cloudy, .foggy, .mostlyCloudy, .partlyCloudy  :
+                return "close"
+            default :
+                return "open"
+            }
+        } else {
+            return ""
         }
     }
 }
