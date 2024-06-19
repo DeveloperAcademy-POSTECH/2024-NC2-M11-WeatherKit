@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "비바람 부는 날x1.png",
+      "filename" : "storm x1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "비바람 부는 날x2.png",
+      "filename" : "storm x2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "비바람 부는 날x3.png",
+      "filename" : "storm x3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
