@@ -12,6 +12,7 @@
 		38C1C7222C2206B6000DE6FE /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1C7212C2206B6000DE6FE /* WeatherManager.swift */; };
 		38C1C7252C220990000DE6FE /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1C7242C220990000DE6FE /* StringLiterals.swift */; };
 		38C1C72B2C221D0D000DE6FE /* HourlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1C72A2C221D0D000DE6FE /* HourlyView.swift */; };
+		38C1C72E2C225EE0000DE6FE /* LoHiTempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1C72D2C225EE0000DE6FE /* LoHiTempView.swift */; };
 		38EDBF2F2C1BD2F800F15D11 /* KwangKwangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EDBF2E2C1BD2F800F15D11 /* KwangKwangApp.swift */; };
 		38EDBF332C1BD2F900F15D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38EDBF322C1BD2F900F15D11 /* Assets.xcassets */; };
 		38EDBF362C1BD2F900F15D11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38EDBF352C1BD2F900F15D11 /* Preview Assets.xcassets */; };
@@ -24,6 +25,8 @@
 		38C1C7212C2206B6000DE6FE /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		38C1C7242C220990000DE6FE /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		38C1C72A2C221D0D000DE6FE /* HourlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyView.swift; sourceTree = "<group>"; };
+		38C1C72C2C222A80000DE6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		38C1C72D2C225EE0000DE6FE /* LoHiTempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoHiTempView.swift; sourceTree = "<group>"; };
 		38EDBF2B2C1BD2F800F15D11 /* KwangKwang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KwangKwang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38EDBF2E2C1BD2F800F15D11 /* KwangKwangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwangKwangApp.swift; sourceTree = "<group>"; };
 		38EDBF322C1BD2F900F15D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		38EDBF2D2C1BD2F800F15D11 /* KwangKwang */ = {
 			isa = PBXGroup;
 			children = (
+				38C1C72C2C222A80000DE6FE /* Info.plist */,
 				38C1C7232C220982000DE6FE /* Constant */,
 				38C1C71C2C20BF10000DE6FE /* KwangKwang.entitlements */,
 				38EDBF982C1FCAD000F15D11 /* Model */,
@@ -109,6 +113,7 @@
 			children = (
 				38C1C7182C20BD48000DE6FE /* MainView.swift */,
 				38C1C72A2C221D0D000DE6FE /* HourlyView.swift */,
+				38C1C72D2C225EE0000DE6FE /* LoHiTempView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				38C1C7252C220990000DE6FE /* StringLiterals.swift in Sources */,
 				38C1C7192C20BD48000DE6FE /* MainView.swift in Sources */,
 				38C1C71E2C21147F000DE6FE /* DateFormat.swift in Sources */,
+				38C1C72E2C225EE0000DE6FE /* LoHiTempView.swift in Sources */,
 				38EDBF2F2C1BD2F800F15D11 /* KwangKwangApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +332,7 @@
 				DEVELOPMENT_TEAM = 89S2Z5S7CX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KwangKwang/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -358,6 +365,7 @@
 				DEVELOPMENT_TEAM = 89S2Z5S7CX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KwangKwang/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -17,7 +17,6 @@ class WeatherManager: ObservableObject {
             print("Failed to get weather data. \(error)")
         }
     }
-
     var icon: String {
         guard let iconName = weather?.currentWeather.symbolName else { return "--" }
         

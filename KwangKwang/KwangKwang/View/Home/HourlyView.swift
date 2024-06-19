@@ -11,6 +11,7 @@ struct HourlyView: View {
             HStack {
                 Text("시간별 예보")
                     .font(.caption)
+                    .fontWeight(.bold)
                     .padding(.leading, 20)
                 Spacer()
             }
@@ -19,12 +20,13 @@ struct HourlyView: View {
                     Spacer().frame(width: 20)
                     if let hourly = weatherManager.hourlyWeather {
                         ZStack {
-                            RoundedRectangle(cornerRadius: 5)
+                            RoundedRectangle(cornerRadius: 15)
                                 .foregroundStyle(.gray6)
                                 .frame(width: 82, height: 120)
                             VStack {
                                 Text("지금")
                                     .font(.caption)
+                                    .fontWeight(.bold)
                                 Text("\(Int(weatherManager.currentWeather!.temperature.converted(to: .celsius).value))°")
                                     .font(.body)
                             }
@@ -33,12 +35,13 @@ struct HourlyView: View {
                             if dailyFormat.string(from: hourly[index].date) == dailyFormat.string(from: Date()) {
                                 if hourly[index].date >= Date() {
                                     ZStack {
-                                        RoundedRectangle(cornerRadius: 5)
+                                        RoundedRectangle(cornerRadius: 15)
                                             .foregroundStyle(.gray6)
                                             .frame(width: 82, height: 120)
                                         VStack {
                                             Text("\(hourFormat.string(from: hourly[index].date))시")
                                                 .font(.caption)
+                                                .fontWeight(.bold)
                                             Text("\(Int(hourly[index].temperature.converted(to: .celsius).value))°")
                                                 .font(.body)
                                         }

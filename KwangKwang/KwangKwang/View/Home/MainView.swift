@@ -14,6 +14,7 @@ struct MainView: View {
             HStack {
                 Text("\(weatherManager.date)")
                     .font(.caption)
+                    .fontWeight(.semibold)
                     .padding(.leading, 20)
                 
                 Spacer()
@@ -22,40 +23,8 @@ struct MainView: View {
                 .padding(.leading, 3)
                 .frame(width: 360, alignment: .leading)
             
-            ZStack {
-                RoundedRectangle(cornerRadius: 8)
-                    .frame(width: 353, height: 62)
-                    .foregroundStyle(.gray6)
-                HStack {
-                    Spacer()
-                    Image(systemName: "cloud.heavyrain")
-                        .resizable()
-                        .frame(width: 35, height: 34)
-                        .padding(.leading, 30)
-                    
-                    VStack {
-                        if let current = weatherManager.currentWeather {
-                            Text("\(Int(current.temperature.converted(to: .celsius).value))°")
-                                .font(.body)
-                                .frame(width: 325, alignment: .leading)
-                            HStack {
-                                if let daily = weatherManager.dailyWeather {
-                                    ForEach(0..<10) { index in
-                                        if dailyFormat.string(from: daily[index].date) == dailyFormat.string(from: Date()) {
-                                            
-                                            Text("최저: \(Int(daily[index].lowTemperature.converted(to: .celsius).value))°")
-                                                .font(.caption2)
-                                            Text("최고: \(Int(daily[index].highTemperature.converted(to: .celsius).value))°")
-                                                .font(.caption2)
-                                        }
-                                    }
-                                    Spacer()
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            LoHiTempView(weatherManager: weatherManager)
+            
             Image("wind")
                 .resizable()
                 .frame(width: 353, height: 396)
@@ -68,6 +37,29 @@ struct MainView: View {
             }
         }
         .font(.title3)
+    }
+    func choiceImage() -> String {
+        
+        if let hourly = weatherManager.hourlyWeather {
+            switch hourly[0].condition {
+            case .blizzard, .blowingSnow, .flurries, .hail, .snow, .frigid, .sleet, .wintryMix, .heavySnow :
+                return "snow"
+            case .blowingDust, .breezy, .tropicalStorm, .windy :
+                return "wind"
+            case .clear, .hot, .sunFlurries, .sunShowers, .mostlyClear :
+                return "sun.max"
+            case .cloudy, .foggy, .mostlyCloudy, .partlyCloudy :
+                return "cloud"
+            case .rain :
+                return "cloud.rain"
+            case .hurricane :
+                return "cloud.bolt.rain"
+            default :
+                return "cloud.heavyrain"
+            }
+        } else {
+            return ""
+        }
     }
 }
 
