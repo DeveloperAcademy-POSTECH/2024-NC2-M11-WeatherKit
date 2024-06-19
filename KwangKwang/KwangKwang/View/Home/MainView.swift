@@ -62,15 +62,15 @@ struct MainView: View {
             case .blizzard, .blowingSnow, .flurries, .hail, .snow, .frigid, .sleet, .wintryMix, .heavySnow :
                 return "snow"
             case .blowingDust, .breezy, .tropicalStorm, .windy :
-                return "wind"
+                return "storm"
             case .clear, .hot, .sunFlurries, .sunShowers, .mostlyClear :
-                return "sunRise"
+                return "sunrise"
             case .cloudy, .foggy, .mostlyCloudy, .partlyCloudy :
                 return "cloud"
             case .hurricane :
                 return "typhoon"
             default :
-                return "rainy"
+                return "rain"
             }
         } else {
             return ""
@@ -81,7 +81,7 @@ struct MainView: View {
             switch daily[0].condition {
             case .blizzard, .blowingSnow, .flurries, .hail, .snow, .frigid, .sleet, .wintryMix, .heavySnow :
                 return StringLiterals.Condition.rainy.rawValue
-            case .blowingDust, .breezy, .tropicalStorm, .windy, .clear, .hot, .sunFlurries, .sunShowers, .mostlyClear :
+            case .blowingDust, .breezy, .tropicalStorm, .windy, .clear, .hot, .sunShowers, .mostlyClear :
                 return StringLiterals.Condition.sunRise.rawValue
             case .cloudy, .foggy, .mostlyCloudy, .partlyCloudy :
                 let calendar = Calendar.current
@@ -109,6 +109,7 @@ struct MainView: View {
     func getLocation() {
         let manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyReduced
+        manager.requestWhenInUseAuthorization()
         let geocoder = CLGeocoder()
         let lactitude = manager.location?.coordinate.latitude
         let logittude = manager.location?.coordinate.longitude
