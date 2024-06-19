@@ -81,7 +81,7 @@ struct MainView: View {
             switch daily[0].condition {
             case .blizzard, .blowingSnow, .flurries, .hail, .snow, .frigid, .sleet, .wintryMix, .heavySnow :
                 return StringLiterals.Condition.rainy.rawValue
-            case .blowingDust, .breezy, .tropicalStorm, .windy, .clear, .hot, .sunFlurries, .sunShowers, .mostlyClear :
+            case .blowingDust, .breezy, .tropicalStorm, .windy, .clear, .hot, .sunShowers, .mostlyClear :
                 return StringLiterals.Condition.sunRise.rawValue
             case .cloudy, .foggy, .mostlyCloudy, .partlyCloudy :
                 let calendar = Calendar.current

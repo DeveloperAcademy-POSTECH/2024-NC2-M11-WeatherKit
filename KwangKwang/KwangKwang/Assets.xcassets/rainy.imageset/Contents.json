@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "비오는 날x1.png",
+      "filename" : "rainyx1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "비오는 날x2.png",
+      "filename" : "rainyx2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "비오는 날x3.png",
+      "filename" : "rainyx3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
