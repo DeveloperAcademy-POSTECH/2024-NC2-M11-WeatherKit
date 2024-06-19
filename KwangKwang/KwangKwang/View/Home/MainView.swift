@@ -5,9 +5,10 @@ struct MainView: View {
     
     @ObservedObject private var weatherManager = WeatherManager()
     @State private var conditionImage: String = ""
+    @State private var locate: String? = ""
+    @State private var myLocation: CLLocation?
     
     let dailyFormat = DateFormat().dailyFormat
-    let pohang = CLLocation(latitude: 36.0190178, longitude: 129.343408)
     
     var body: some View {
         VStack(spacing: 12) {
@@ -18,8 +19,19 @@ struct MainView: View {
                     .padding(.leading, 20)
                 
                 Spacer()
+                
+                if let locate = locate{
+                    Text("\(locate)")
+                        .font(.caption)
+                        .fontWeight(.bold)
+                    Image(systemName: "location.fill")
+                        .font(.caption)
+                        .padding(.trailing, 25)
+                }
+                
             }
-            Text(StringLiterals.Condition.rainy.rawValue)
+            
+            Text(choiceText())
                 .padding(.leading, 3)
                 .frame(width: 360, alignment: .leading)
             
@@ -34,8 +46,11 @@ struct MainView: View {
         }
         .onAppear {
             Task {
-                await weatherManager.getWeather(lat: pohang.coordinate.latitude,
-                                                long: pohang.coordinate.longitude)
+                getLocation()
+                if let myLocation = myLocation {
+                    await weatherManager.getWeather(lat: myLocation.coordinate.latitude,
+                                                    long: myLocation.coordinate.longitude)
+                }
             }
         }
         .font(.title3)
@@ -65,21 +80,51 @@ struct MainView: View {
         if let daily = weatherManager.dailyWeather {
             switch daily[0].condition {
             case .blizzard, .blowingSnow, .flurries, .hail, .snow, .frigid, .sleet, .wintryMix, .heavySnow :
-                return "snow"
-            case .blowingDust, .breezy, .tropicalStorm, .windy :
-                return "wind"
-            case .clear, .hot, .sunFlurries, .sunShowers, .mostlyClear :
-                return "sunRise"
+                return StringLiterals.Condition.rainy.rawValue
+            case .blowingDust, .breezy, .tropicalStorm, .windy, .clear, .hot, .sunFlurries, .sunShowers, .mostlyClear :
+                return StringLiterals.Condition.sunRise.rawValue
             case .cloudy, .foggy, .mostlyCloudy, .partlyCloudy :
-                return "cloud"
+                let calendar = Calendar.current
+                let components = calendar.dateComponents([.month], from: daily[0].date)
+                
+                if components.month! <= 8 {
+                    return StringLiterals.Condition.summer.rawValue
+                } else {
+                    return StringLiterals.Condition.winter.rawValue
+                }
             case .hurricane :
-                return "typhoon"
+                return StringLiterals.Condition.typhoon.rawValue
+            case .drizzle, .freezingDrizzle :
+                return StringLiterals.Condition.drizzle.rawValue
+            case .sunFlurries :
+                return StringLiterals.Condition.fakeSun.rawValue
             default :
-                return "rainy"
+                return StringLiterals.Condition.rainy.rawValue
             }
         } else {
             return ""
         }
+    }
+    
+    func getLocation() {
+        let manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyReduced
+        let geocoder = CLGeocoder()
+        let lactitude = manager.location?.coordinate.latitude
+        let logittude = manager.location?.coordinate.longitude
+        
+        if let lactitude = lactitude, let logittude = logittude {
+            
+            let location = CLLocation(latitude: lactitude, longitude: logittude)
+            myLocation = location
+            geocoder.reverseGeocodeLocation(location) { placemarks, error in
+                if let placemarks = placemarks, let address = placemarks.last?.locality {
+                    locate = address
+                }
+            }
+        }
+        
+        
     }
 }
 

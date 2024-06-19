@@ -15,7 +15,8 @@ struct LoHiTempView: View {
                 Spacer()
                 Image(systemName: choiceImage())
                     .resizable()
-                    .frame(width: 35, height: 34)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 36, height: 36)
                     .padding(.leading, 40)
                 
                 VStack {
