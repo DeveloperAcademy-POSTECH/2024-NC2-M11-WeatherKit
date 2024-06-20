@@ -98,3 +98,7 @@ Weatherkit 을 사용할 때 가장 핵심이 되는 부분입니다.
     - 악천후 경보 텍스트는 어떠한 방식으로도 수정하거나, 변경하거나, 고치거나 모호하게 만들어서는 안 됩니다.
     - 모든 기상 경보 제목 또는 설명에는 해당 경보를 발표한 **기상청 출처의 정확한 이름을 포함**하고 있어야 합니다. 적용할 수 있는 기상청에 대한 정보와 이러한 기상 경보의 사용 및 배포 관련 자세한 사용 조건은 해당 Apple 날씨 경보 상세 페이지를 방문하시기 바랍니다.
 
+## 팀원 소개
+|![Hash](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M11-WeatherKit/assets/125838606/818eb042-f41b-49d0-b16d-cf73a488db6d)|![Jamie](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M11-WeatherKit/assets/125838606/94e95224-28f2-4a7e-95fa-b04fa15dffc5)|
+|:----:|:----:|
+|[해시](https://github.com/JungHash)|[제이미](https://github.com/TakeMos)|
